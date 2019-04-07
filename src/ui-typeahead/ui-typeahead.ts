@@ -7,7 +7,7 @@ interface TypeAHeadItem {
 interface TypeAHeadOptions {
     menuHeight:string;
 }
-class TypeAHead extends HTMLElement {
+class TypeAHeadComponent extends HTMLElement {
     public static get observedAttributes(): string[] {
         return ['option-list' ,'selected-list', 'options'];
     }
@@ -105,7 +105,7 @@ class TypeAHead extends HTMLElement {
         document.body.dispatchEvent(customEvent);
     }
     private dispatchOnChange(){
-        const customEvent = new CustomEvent(TypeAHead.EVENTS.ON_CHANGE,{
+        const customEvent = new CustomEvent(TypeAHeadComponent.EVENTS.ON_CHANGE,{
             detail:{
                 selectedItems: [...this.selectedList],
             }
@@ -156,4 +156,4 @@ class TypeAHead extends HTMLElement {
         `;
     }
 }
-customElements.define('ui-typeahead', TypeAHead);
+customElements.define('ui-typeahead', TypeAHeadComponent);
