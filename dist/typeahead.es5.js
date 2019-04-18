@@ -1,14 +1,43 @@
-var __assign = (undefined && undefined.__assign) || function () {
-    __assign = Object.assign || function(t) {
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
         }
         return t;
     };
     return __assign.apply(this, arguments);
 };
+
 var MenuComponent = /** @class */ (function () {
     function MenuComponent() {
         this.optionList = [];
@@ -166,53 +195,11 @@ var MenuComponent = /** @class */ (function () {
     return MenuComponent;
 }());
 window.UIComponents = __assign({}, window.UIComponents, { menuComponent: new MenuComponent() });
-//# sourceMappingURL=ui-menu.js.map
-
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign$1 = function() {
-    __assign$1 = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign$1.apply(this, arguments);
-};
 
 var TypeAHeadStyle = function () {
     var margin = '5px';
     return "\n            ui-typeahead {\n                display:inline-block;\n                font-family: Helvetica, Arial, sans-serif;\n            }\n            :host {\n                display:inline-block;\n                font-family: Helvetica, Arial, sans-serif;\n            }\n            .wrapper {\n                display: flex;\n                border:1px solid #333;\n                flex-wrap: wrap;\n                position: relative;\n                padding-right: 1.5rem;\n                background-color: white;\n                background-color: var(--typeahead-bg-color,white);\n            }\n            .pill {\n                border-radius: 0.2rem;\n                border-radius: var(--pill-border-radius,0.2rem);\n                background-color: #999;\n                background-color: var(--pill-bg-color,#999);\n                color: white;\n                color: var(--pill-color,white);\n                padding: 0.3rem 0.5rem;\n                padding: var(--pill-padding,0.3rem 0.5rem);\n                margin-top: 0.2rem;\n                margin-top: var(--pill-margin-top,0.2rem);\n                margin-bottom: 0.2rem;\n                margin-bottom: var(--pill-margin-bottom,0.2rem);\n                margin-left: 0.2rem;\n                margin-left: var(--pill-margin-left,0.2rem);\n                display: inline-block;\n                margin-right: 0.2rem;\n                margin-right: var(--pill-margin-right,0.2rem);\n                font-size: 0.75rem;\n                font-size: var(--pill-font-size,0.75rem);\n                cursor:pointer;\n            }\n            .pill:not(.active):hover {\n                background-color: #666;\n                background-color: var(--pill-hover-bg-color,#666);\n            }\n            .pill.active {\n                background-color: #333;\n                background-color: var(--pill-active-bg-color,#333);\n                color: white;\n                color: var(--pill-active-color,white);\n            }\n            .pill span {\n                display: inline-block;\n                padding: 0 0.2rem;\n            }\n            input {\n                display: inline-block;\n                flex: 1;\n                border: none;\n                min-width:2rem;\n                margin:" + margin + ";\n            }\n            input:focus {\n                outline:none;\n            }\n            span.close {\n                position: absolute;\n                right: 0.5rem;\n                top: 50%;\n                transform: translateY(-50%);\n                font-size: 0.8rem;\n                font-weight: 700;\n                line-height: 1;\n                color: #333;\n                color: var(--typeahead-close-color,#333);\n                cursor: pointer;\n                display: none;\n            }\n            span.close:hover {\n                color: #999;\n                color: var(--typeahead-close-color,#999);\n            }\n            span.close.show {\n                display: block;\n            }\n            ";
 };
-//# sourceMappingURL=typeahead.js.map
 
 var TypeAHeadComponent = /** @class */ (function (_super) {
     __extends(TypeAHeadComponent, _super);
@@ -328,13 +315,13 @@ var TypeAHeadComponent = /** @class */ (function (_super) {
         var options = !value ? this.optionList
             .filter(function (item) { return !_this.selectedList.find(function (sItem) { return item.id == sItem.id; }); })
             : this.optionList.filter(function (item) { return !_this.selectedList.find(function (sItem) { return item.id == sItem.id; }) && item.label.toLowerCase().indexOf(value) >= 0; })
-                .map(function (item) { return __assign$1({}, item, { label: item.label.replace(new RegExp("" + value, 'igm'), "<strong>" + value + "</strong>") }); });
+                .map(function (item) { return __assign({}, item, { label: item.label.replace(new RegExp("" + value, 'igm'), "<strong>" + value + "</strong>") }); });
         if (!options.length)
             options.push({
                 label: 'No matches found.',
                 id: 0,
             });
-        return options.map(function (item) { return __assign$1({}, item, { callback: _this.onMenuItemClicked.bind(_this) }); });
+        return options.map(function (item) { return __assign({}, item, { callback: _this.onMenuItemClicked.bind(_this) }); });
     };
     TypeAHeadComponent.prototype.onMenuItemClicked = function (selectedItem) {
         this.selectedList.push(this.optionList.find(function (item) { return item.id == selectedItem.id; }));
@@ -362,5 +349,5 @@ var TypeAHeadComponent = /** @class */ (function (_super) {
 }(HTMLElement));
 customElements.define('ui-typeahead', TypeAHeadComponent);
 
-//# sourceMappingURL=typeahead.js.map
+export { TypeAHeadComponent };
 //# sourceMappingURL=typeahead.es5.js.map

@@ -1,13 +1,12 @@
 import {TypeAHeadStyle} from './style/typeahead';
-
-interface TypeAHeadItem {
+export interface TypeAHeadItem {
     label:string;
     id: string | number;
 } 
-interface TypeAHeadOptions {
+export interface TypeAHeadOptions {
     menuHeight:string;
 }
-class TypeAHeadComponent extends HTMLElement {
+export class TypeAHeadComponent extends HTMLElement {
     public static get observedAttributes(): string[] {
         return ['option-list' ,'selected-list', 'options'];
     }

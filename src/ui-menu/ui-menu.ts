@@ -1,3 +1,4 @@
+import * as style from './style/style.scss';
 interface MenuItem {
     id:string;
     label:string;
